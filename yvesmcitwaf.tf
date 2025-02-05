@@ -1,12 +1,12 @@
-resource "azurerm_resource_group" "rg" {
-  name     = "waf-resource-group"
-  location = "East US"
+resource "azurerm_resource_group" "vmlinuxrg" {
+  name     = "yves-waf-resource-group"
+  location = "Eastus"
 }
 
-resource "azurerm_application_gateway" "appgw" {
-  name                = "myAppGateway"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+resource "azurerm_application_gateway" "yvesappgw" {
+  name                = "yvesAppGateway"
+  location            = azurerm_resource_group.vmlinuxrg.location
+  resource_group_name = azurerm_resource_group.vmlinuxrg.name
 
   sku {
     name     = "WAF_v2"
