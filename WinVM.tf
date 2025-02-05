@@ -2,7 +2,7 @@
   features {}
 }*/
 
-resource "azurerm_resource_group" "vmlinuxrg" {
+resource "azurerm_resource_group" "yvesmcitarg" {
   name     = "virtual-m-linux-resources"
   location = "eastus"
 }
@@ -10,21 +10,21 @@ resource "azurerm_resource_group" "vmlinuxrg" {
 resource "azurerm_virtual_network" "vnet" {
   name                = "vnetwork"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.vmlinuxrg.location
-  resource_group_name = azurerm_resource_group.vmlinuxrg.name
+  location            = azurerm_resource_group.yvesmcitarg.location
+  resource_group_name = azurerm_resource_group.yvesmcitarg.name
 }
 
 resource "azurerm_subnet" "subneta" {
   name                 = "subnet-a"
-  resource_group_name  = azurerm_resource_group.vmlinuxrg.name
+  resource_group_name  = azurerm_resource_group.yvesmcitarg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
 
 resource "azurerm_network_interface" "interfacew" {
   name                = "interface-win-nic"
-  location            = azurerm_resource_group.vmlinuxrg.location
-  resource_group_name = azurerm_resource_group.vmlinuxrg.name
+  location            = azurerm_resource_group.yvesmcitarg.location
+  resource_group_name = azurerm_resource_group.yvesmcitarg.name
 
   ip_configuration {
     name                          = "subnet-a"
@@ -35,8 +35,8 @@ resource "azurerm_network_interface" "interfacew" {
 
 resource "azurerm_windows_virtual_machine" "winvm" {
   name                = "winvm-machine"
-  resource_group_name = azurerm_resource_group.vmlinuxrg.name
-  location            = azurerm_resource_group.vmlinuxrg.location
+  resource_group_name = azurerm_resource_group.yvesmcitarg.name
+  location            = azurerm_resource_group.yvesmcitargg.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
