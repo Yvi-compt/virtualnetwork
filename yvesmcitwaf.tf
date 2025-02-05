@@ -66,16 +66,16 @@ resource "azurerm_application_gateway" "yvesappgw" {
 
 resource "azurerm_public_ip" "appgw_pip" {
   name                = "appgw-public-ip"
-  location            = azurerm_resource_group.vmlinuxrg.location
-  resource_group_name = azurerm_resource_group.vmlinuxrg.name
+  location            = azurerm_resource_group.yvesmcitrg.location
+  resource_group_name = azurerm_resource_group.yvesmcitrg.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
 
 resource "azurerm_virtual_network" "vnetb" {
   name                = "waf-vnet"
-  location            = azurerm_resource_group.vmlinuxrg.location
-  resource_group_name = azurerm_resource_group.vmlinuxrg.name
+  location            = azurerm_resource_group.yvesmcitrg.location
+  resource_group_name = azurerm_resource_group.yvesmcitrg.name
   address_space       = ["10.0.0.0/16"]
 }
 
