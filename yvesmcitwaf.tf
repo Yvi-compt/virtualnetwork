@@ -16,7 +16,7 @@ resource "azurerm_application_gateway" "yvesappgw" {
 
   gateway_ip_configuration {
     name      = "my-gateway-ip-config"
-    subnet_id = azurerm_subnet.subnet.id
+    subnet_id = azurerm_subnet.subneta.id
   }
 
   frontend_ip_configuration {
@@ -66,30 +66,30 @@ resource "azurerm_application_gateway" "yvesappgw" {
 
 resource "azurerm_public_ip" "appgw_pip" {
   name                = "appgw-public-ip"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.vmlinuxrg.location
+  resource_group_name = azurerm_resource_group.vmlinuxrg.name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "waf-vnet"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.vmlinuxrg.location
+  resource_group_name = azurerm_resource_group.vmlinuxrg.name
   address_space       = ["10.0.0.0/16"]
 }
 
-resource "azurerm_subnet" "subnet" {
+resource "azurerm_subnet" "subneta" {
   name                 = "waf-subnet"
-  resource_group_name  = azurerm_resource_group.rg.name
+  resource_group_name  = azurerm_resource_group.vmlinuxrg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/24"]
 }
 
 resource "azurerm_web_application_firewall_policy" "waf_policy" {
-  name                = "myWAFPolicy"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  name                = "yvesWAFPolicy"
+  resource_group_name = azurerm_resource_group.vmlinuxrg.name
+  location            = azurerm_resource_group.vmlinuxrg.location
 
   policy_settings {
     enabled                     = true
