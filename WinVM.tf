@@ -3,7 +3,7 @@
 }*/
 
 resource "azurerm_resource_group" "vmlinuxrg" {
-  name     = "virtual-m-linux'resources"
+  name     = "virtual-m-linux-resources"
   location = "eastus"
 }
 
