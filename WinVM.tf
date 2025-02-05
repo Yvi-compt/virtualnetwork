@@ -17,7 +17,7 @@ resource "azurerm_virtual_network" "vnet" {
 resource "azurerm_subnet" "subneta" {
   name                 = "subnet-a"
   resource_group_name  = azurerm_resource_group.vmlinuxrg.name
-  virtual_network_name = azurerm_virtual_network.vnetwor.name
+  virtual_network_name = azurerm_virtual_network.vnetwork.name
   address_prefixes     = ["10.0.2.0/24"]
 }
 
@@ -41,7 +41,7 @@ resource "azurerm_windows_virtual_machine" "winvm" {
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
   network_interface_ids = [
-    azurerm_network_interface.example.id,
+    azurerm_network_interface.interfacew.id,
   ]
 
   os_disk {
