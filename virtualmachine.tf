@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "vmlinuxrg" {
+/*resource "azurerm_resource_group" "vmlinuxrg" {
   name     = "virtual-m-linux-resources"
   location = "eastus"
 }
@@ -56,3 +56,4 @@ resource "azurerm_linux_virtual_machine" "vmlinux" {
     version   = "latest"
   }
 }
+*/
