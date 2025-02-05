@@ -36,7 +36,7 @@ resource "azurerm_network_interface" "interfacew" {
 resource "azurerm_windows_virtual_machine" "winvm" {
   name                = "winvm-machine"
   resource_group_name = azurerm_resource_group.yvesmcitarg.name
-  location            = azurerm_resource_group.yvesmcitargg.location
+  location            = azurerm_resource_group.yvesmcitarg.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
