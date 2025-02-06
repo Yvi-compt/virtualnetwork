@@ -13,8 +13,8 @@ resource "azurerm_storage_account" "yvesmcitstorage" {
 
   resource "azurerm_service_plan" "yvesmcitplan" {
   name                = "yvesmcitplan"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.yvesmcitrg.name
+  location            = azurerm_resource_group.yvesmcitrg.location
   os_type             = "Linux"   # Use "Windows" if needed
   sku_name            = "P1v2"    # Choose the appropriate pricing tier
 }
