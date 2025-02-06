@@ -24,7 +24,7 @@ resource "azurerm_storage_account" "yvesmcitstorage" {
     size = "S1"
   }
 */
-resource "azurerm_function_app" "yvesmcitfunction" {
+resource "azurerm_linux_function_app" "yvesmcitfunction" {
   name                       = "test-azure-functions"
   location                   = azurerm_resource_group.yvesmcitrg.location
   resource_group_name        = azurerm_resource_group.yvesmcitrg.name
