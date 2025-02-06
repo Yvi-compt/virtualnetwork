@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "yvesmcitstorage" {
   account_replication_type = "LRS"
 }
 
-resource "azurerm_app_service_plan" "yvesmcitplan" {
+resource "azurerm_service_plan" "yvesmcitplan" {
   name                = "azure-functions-test-service-plan"
   location            = azurerm_resource_group.yvesmcitrg.location
   resource_group_name = azurerm_resource_group.yvesmcitrg.name
@@ -22,7 +22,7 @@ resource "azurerm_app_service_plan" "yvesmcitplan" {
   }
 }
 
-resource "azurerm_function_app" "yvesmcitfunction" {
+resource "azurerm_function" "yvesmcitfunction" {
   name                       = "test-azure-functions"
   location                   = azurerm_resource_group.yvesmcitrg.location
   resource_group_name        = azurerm_resource_group.yvesmcitrg.name
