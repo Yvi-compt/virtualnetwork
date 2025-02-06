@@ -31,4 +31,10 @@ resource "azurerm_linux_function_app" "yvesmcitfunction" {
   service_plan_id            = azurerm_service_plan.yvesmcitplan.id
   storage_account_name       = azurerm_storage_account.yvesmcitstorage.name
   storage_account_access_key = azurerm_storage_account.yvesmcitstorage.primary_access_key
+
+    site_config {
+    application_stack {
+      python_version = "3.8"  # Use "node_version", "dotnet_version", etc., for different runtimes
+    }
+  }
 }
