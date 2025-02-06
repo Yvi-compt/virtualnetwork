@@ -19,11 +19,11 @@ resource "azurerm_storage_account" "yvesmcitstorage" {
   sku_name            = "P1v2"    # Choose the appropriate pricing tier
 }
 
-  sku {
+ /* sku {
     tier = "Standard"
     size = "S1"
   }
-
+*/
 resource "azurerm_function_app" "yvesmcitfunction" {
   name                       = "test-azure-functions"
   location                   = azurerm_resource_group.yvesmcitrg.location
