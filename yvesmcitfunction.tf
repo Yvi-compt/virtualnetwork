@@ -12,17 +12,21 @@ resource "azurerm_storage_account" "yvesmcitstorage" {
 }
 
 resource "azurerm_service_plan" "yvesmcitplan" {
-  name                = "azure-functions-test-service-plan"
-  location            = azurerm_resource_group.yvesmcitrg.location
-  resource_group_name = azurerm_resource_group.yvesmcitrg.name
-
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
+  resource "azurerm_service_plan" "yvesmcitplan" {
+  name                = "yvesmcitplan"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  os_type             = "Linux"   # Use "Windows" if needed
+  sku_name            = "P1v2"    # Choose the appropriate pricing tier
 }
 
-resource "azurerm_function" "yvesmcitfunction" {
+ /* sku {
+    tier = "Standard"
+    size = "S1"
+  }*/
+}
+
+resource "azurerm_function_app" "yvesmcitfunction" {
   name                       = "test-azure-functions"
   location                   = azurerm_resource_group.yvesmcitrg.location
   resource_group_name        = azurerm_resource_group.yvesmcitrg.name
