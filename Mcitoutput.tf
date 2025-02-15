@@ -11,7 +11,7 @@ character_enemy_map =   { for character in local.characters: # Convert character
       character => local.enemies_destroyed
 }
 }
-output "winterlistOfSport {
+/*output "winterlistOfSport {
 
 value       = { for idx, name in local.winterlistOfSports : idx => "Sport Name: ${name}" }
 }
@@ -23,3 +23,4 @@ output "characters" {
 
 value =   { for idx, name in local.characters: idx => "character name: ${name}" }
 }
+*/
