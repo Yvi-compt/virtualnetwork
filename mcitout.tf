@@ -1,6 +1,6 @@
 locals {
 
-Students = ["Yves", "Maryam", "Damita", "Bachir", "Braeden", ""Benito", "Joseph", "Arnault"]
+Students = ["Yves", "Maryam", "Damita", "Bachir", "Braeden","Benito", "Joseph", "Arnault"]
 
  Teachers = ["German Torres", "Keyvan Keymanesh", "Aldo Andrade","Sami Islam"]
 
