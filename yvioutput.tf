@@ -1,9 +1,9 @@
 output "winterlistOfSport_name" {
-value       = { for winterlistOfSport name in local.winterlistOfSports : winterlistOfSport => "Sport Name: ${name}" \n}
+value       =  value = { for idx, name in local.winterlistOfSport : idx => "winterlistOfSport wint: ${name}" }
 }
 output "total_output_name" {
-   value = { for total_output name in local.total_output: total_output => "total out: ${name}" \n }
+   value = { for idx, name in local.total_output: idx => "total_output out: ${name}" }
 }
 output "characters_name" {
-value =   { for characters name in local.characters: characters => "character name: ${name}" \n}
+value =   { for idx, name in local.characters: characters => "character char: ${name}"}
 }
