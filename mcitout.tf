@@ -11,6 +11,6 @@ Students = ["Yves", "Maryam", "Damita", "Bachir", "Braeden","Benito", "Joseph", 
 output "app_McitStudentTeacher_combos" {
   value = tolist(toset([
     for stud in local.Students : 
-    [for teach in local.Teachers : "${stud}-${teach}"]
+    [for teach in local.Teachers : "${stud} - ${teach}"]
   ]))
 }
