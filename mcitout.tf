@@ -1,6 +1,10 @@
 locals {
+
 Students = ["Yves", "Maryam", "Damita", "Bachir", "Braeden", ""Benito", "Joseph", "Arnault"]
+
  Teachers = ["German Torres", "Keyvan Keymanesh", "Aldo Andrade","Sami Islam"]
+
+
 }
 
 # Generate a unique list of Student-Teacher combinations
